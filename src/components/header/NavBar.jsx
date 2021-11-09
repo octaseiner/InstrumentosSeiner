@@ -1,5 +1,6 @@
-import "./navbar.css";
-import { Fragment } from "react/cjs/react.production.min";
+import "./header.css";
+import { Fragment } from "react";
+import CartWidget from "./CartWidget";
 
 const Header = () => {
     return (
@@ -16,6 +17,9 @@ const Header = () => {
                         <li><a href="index.html" className="font">Contact</a></li>
                     </ul>
 
+                    <Fragment>
+                        <CartWidget />
+                    </Fragment>
                 </nav>
             </header>
         </Fragment>
