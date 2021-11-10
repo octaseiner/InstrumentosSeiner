@@ -16,7 +16,7 @@ nav {
     justify-content: space-between;
 }
 
-ul {
+.navList {
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -24,23 +24,23 @@ ul {
     width: 600px;
 }
 
-li {
+.navItem {
     padding: 10px;
     color: white;
 }
 
-li:hover {
+.navItem:hover {
     cursor: pointer;
     color: black;
     border-bottom: solid thistle;
 }
 
-a {
+.navLink {
     text-decoration: none;
     color: white;
 }
 
-h1 {
+.logo {
     color: white;
     padding-left: 15px;
     font-size: 20px;
@@ -50,7 +50,7 @@ h1 {
     font-family: 'Acme', sans-serif;
 }
 
-section {
+.sectionCartWidget {
     background-color: white;
     width: 80px;
     display: flex;
@@ -58,7 +58,7 @@ section {
     align-items: center;
 }
 
-button {
+.cartButton {
     background-color: white;
     border: none;
     cursor: pointer;
@@ -73,7 +73,7 @@ button {
     align-items: center;
 }
 
-button div {
+.cartCounter {
     width: 20px;
     height: 20px;
     color: white;

@@ -1,0 +1,10 @@
+.listProducts {
+    border: 1px solid black;
+    width: 200px;
+    margin: 50px;
+    padding: 5px;
+}
+
+.name {
+    margin: 10px;
+}

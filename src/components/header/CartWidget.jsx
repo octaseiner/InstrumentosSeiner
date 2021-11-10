@@ -4,10 +4,10 @@ import { Fragment } from "react";
 const CartWidget = () => {
     return (
         <Fragment>
-            <section>
-                <button>
+            <section class="sectionCartWidget">
+                <button className="cartButton">
                     <i class="fas fa-shopping-cart"></i>
-                    <div className="none"></div>
+                    <div className="none cartCounter"></div>
                 </button>
             </section>
         </Fragment>

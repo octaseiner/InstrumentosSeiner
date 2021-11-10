@@ -8,7 +8,7 @@ function App() {
   return (
     <Fragment>
       <Header />
-      <ItemListContainer />
+      <ItemListContainer greeting="Welcome to The Music Store!"/>
       <ItemCount />
     </Fragment>
   );

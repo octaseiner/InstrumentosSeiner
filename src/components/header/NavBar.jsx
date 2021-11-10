@@ -8,13 +8,13 @@ const Header = () => {
             <header>
                 <nav>
                     <div>
-                        <h1><a href="index.html" className="font">The Music Store</a></h1>
+                        <h1><a href="index.html" className="font logo navLink">The Music Store</a></h1>
                     </div>
 
-                    <ul>
-                        <li><a href="index.html" className="font">Home</a></li>
-                        <li><a href="index.html" className="font">Products</a></li>
-                        <li><a href="index.html" className="font">Contact</a></li>
+                    <ul className="navList">
+                        <li className="navItem"><a href="index.html" className="font navLink">Home</a></li>
+                        <li className="navItem"><a href="index.html" className="font navLink">Products</a></li>
+                        <li className="navItem"><a href="index.html" className="font navLink">Contact</a></li>
                     </ul>
 
                     <Fragment>

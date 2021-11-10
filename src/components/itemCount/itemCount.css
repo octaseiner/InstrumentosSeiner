@@ -1,0 +1,47 @@
+.itemCount {
+    width: 150px;
+    height: 70px;
+    border: 2px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.numberCount {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.minus {
+    width: 20px;
+    height: 20px;
+    border: 1px solid;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.plus {
+    width: 20px;
+    height: 20px;
+    border: 1px solid;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.counter{
+    width: 50px;
+    height: 20px;
+    border: 1px solid;
+}
+
+.buttonCount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+

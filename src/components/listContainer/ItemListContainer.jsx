@@ -2,12 +2,12 @@ import "./itemListContainer.css";
 import { Fragment } from "react";
 
 
-const ItemListContainer = () => {
+const ItemListContainer = ({greeting}) => {
     return (
         <Fragment>
-            <h1>The Music Store</h1>
-            <section>
-                <p>Listado de productos</p>
+            <h1 className="name font">The Music Store</h1>
+            <section className="listProducts font">
+                {greeting}
             </section>
         </Fragment>
     )
