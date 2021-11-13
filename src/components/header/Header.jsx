@@ -17,9 +17,7 @@ const Header = () => {
                         <li className="navItem"><a href="index.html" className="font navLink">Contact</a></li>
                     </ul>
 
-                    <Fragment>
-                        <CartWidget />
-                    </Fragment>
+                    <CartWidget />
                 </nav>
             </header>
         </Fragment>
