@@ -1,5 +1,6 @@
 import "./itemListContainer.css";
 import { Fragment } from "react";
+import ItemList from "./ItemList"
 
 
 const ItemListContainer = ({greeting}) => {
@@ -9,6 +10,8 @@ const ItemListContainer = ({greeting}) => {
             <section className="listProducts font">
                 {greeting}
             </section>
+
+            <ItemList />
         </Fragment>
     )
 }

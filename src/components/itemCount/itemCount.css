@@ -1,7 +1,8 @@
 .itemCount {
-    width: 150px;
+    width: 200px;
     height: 70px;
-    border: 2px solid;
+    border: 1px solid;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -9,11 +10,12 @@
 
 .numberCount {
     width: 100%;
+    height: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-
+    margin-top: 2px;
 }
 
 .minus {
@@ -44,4 +46,17 @@
     align-items: center;
 }
 
+.addButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addToCart {
+    width: 100px;
+    height: 20px;
+    border: 1px solid;
+    border-radius: 20px;
+    cursor: pointer;
+}
 

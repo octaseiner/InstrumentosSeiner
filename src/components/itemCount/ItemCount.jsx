@@ -30,6 +30,10 @@ const ItemCount = () => {
                     <button className="plus" onClick={plus}> + </button>
                 </div>
 
+                <div className="addButton">
+                    <button className="addToCart">Add to cart</button>
+                </div>
+
             </section>
         </Fragment>
     )
