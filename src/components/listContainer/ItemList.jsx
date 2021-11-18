@@ -1,16 +1,15 @@
 import "./itemListContainer.css";
 import { Fragment } from "react";
-import Item from "./Item"
+import { Item } from "./Item";
 
 
-const ItemList = () => {
+export const ItemList = ({products}) => {
     return (
         <Fragment>
             <section className="itemsSection">
-                <Item />
+                {products.map((prod) => <Item product={prod} />)}
             </section>
         </Fragment>
-    )
+    );
 }
 
-export default ItemList;

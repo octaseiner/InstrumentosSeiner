@@ -2,7 +2,9 @@ import "./itemCount.css";
 import { Fragment, useState } from "react";
 
 
-const ItemCount = () => {
+export const ItemCount = (stock) => {
+
+    stock = 5
 
     const [number, setNumber] = useState(0)
 
@@ -18,20 +20,31 @@ const ItemCount = () => {
         setNumber (number - 1)
     }
 
+    const checkZero = ()=>{
+        return (number === 0);
+    }
+
+    const checkStock = () =>{
+        return (number >= stock);
+    }
+    
+    const checkAddCart = () =>{
+        return ((number === 0 || number > stock));
+    }
 
     return (
         <Fragment>
             <section className="itemCount">
                 <div className="numberCount">
-                    <button className="minus" onClick={minus}> - </button>
+                    <button className="minus" disabled={checkZero()}  onClick={minus}> - </button>
                     <p className="counter">
                         {`${number}`}
                     </p>
-                    <button className="plus" onClick={plus}> + </button>
+                    <button className="plus" disabled={checkStock()} onClick={plus}> + </button>
                 </div>
 
                 <div className="addButton">
-                    <button className="addToCart">Add to cart</button>
+                    <button className="addToCart" disabled={checkAddCart()}  >Add to cart</button>
                 </div>
 
             </section>
@@ -39,5 +52,3 @@ const ItemCount = () => {
     )
     
 }
-
-export default ItemCount;

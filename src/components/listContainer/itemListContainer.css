@@ -17,8 +17,8 @@
 }
 
 .item {
-    width: 250px;
-    height: 400px;
+    width: 350px;
+    height: 600px;
     border: 2px solid red;
     border-radius: 20px;
     display: flex;
@@ -27,9 +27,7 @@
     align-items: center;
 }
 
-.typePriceDiv {
 
-}
 
 .itemCountSection {
     display: flex;

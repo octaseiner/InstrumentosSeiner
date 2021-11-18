@@ -1,8 +1,8 @@
 import "./header.css";
 import { Fragment } from "react";
-import CartWidget from "./CartWidget";
+import { CartWidget } from "./CartWidget";
 
-const Header = () => {
+export const Header = () => {
     return (
         <Fragment>
             <header>
@@ -23,5 +23,3 @@ const Header = () => {
         </Fragment>
     )
 }
-
-export default Header;

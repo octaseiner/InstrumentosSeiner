@@ -1,7 +1,7 @@
 import "./header.css";
 import { Fragment } from "react";
 
-const CartWidget = () => {
+export const CartWidget = () => {
     return (
         <Fragment>
             <section className="sectionCartWidget">
@@ -13,5 +13,3 @@ const CartWidget = () => {
         </Fragment>
     )
 }
-
-export default CartWidget;
