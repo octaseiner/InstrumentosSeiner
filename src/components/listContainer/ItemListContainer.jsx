@@ -1,6 +1,6 @@
 import "./itemListContainer.css";
 import { Fragment, useEffect, useState } from "react";
-import { ItemList } from "./ItemList"
+import { ItemList } from "../itemList/ItemList"
 import { bringData } from '../../helpers/bringData'
 
 
@@ -31,8 +31,8 @@ export const ItemListContainer = () => {
             <section className="listProducts font">
             {
                 loading 
-                    ? <h2 className="loading my-5">Loading...</h2> 
-                    : <ItemList className="w-100 d-flex justify-content-center" products={products}/>
+                    ? <h2 className="">Loading...</h2> 
+                    : <ItemList className="" products={products}/>
             }
             </section>
 
@@ -40,4 +40,3 @@ export const ItemListContainer = () => {
         </Fragment>
     )
 }
-

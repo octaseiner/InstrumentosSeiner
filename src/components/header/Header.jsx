@@ -1,6 +1,6 @@
 import "./header.css";
 import { Fragment } from "react";
-import { CartWidget } from "./CartWidget";
+import { CartWidget } from "../cartWidget/CartWidget"
 
 export const Header = () => {
     return (

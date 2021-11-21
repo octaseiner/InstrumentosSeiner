@@ -1,4 +1,4 @@
-import "./header.css";
+import "./cartWidget.css";
 import { Fragment } from "react";
 
 export const CartWidget = () => {
