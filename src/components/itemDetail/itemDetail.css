@@ -1,0 +1,10 @@
+.itemDetail {
+    width: auto;
+    height: auto;
+    border: 2px solid red;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
