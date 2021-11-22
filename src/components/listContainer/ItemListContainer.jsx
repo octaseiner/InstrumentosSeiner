@@ -35,8 +35,6 @@ export const ItemListContainer = () => {
                     : <ItemList className="" products={products}/>
             }
             </section>
-
-            <ItemList />
         </Fragment>
     )
 }

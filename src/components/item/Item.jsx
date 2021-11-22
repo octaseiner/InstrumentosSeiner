@@ -9,10 +9,12 @@ export const Item = ({product}) => {
             <section key={product.id} className="item">
                 <h1 className="itemName">{product.name}</h1>
                 <img src={product.image} alt="{product.type}" />
+                
                 <div className="typePriceDiv">
                     <p className="itemType">Type: {product.type}</p>
                     <p className="itemPrice">Price: {product.price}</p>
                 </div>
+
                 <section className="itemCountSection">
                     <ItemCount />
                 </section>

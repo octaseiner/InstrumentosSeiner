@@ -1,6 +1,7 @@
 .listProducts {
     border: 1px solid black;
-    width: 200px;
+    border-radius: 20px;
+    width: auto;
     margin: 50px;
     padding: 5px;
 }
