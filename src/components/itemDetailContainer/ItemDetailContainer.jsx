@@ -2,18 +2,26 @@ import { Fragment, useEffect, useState } from "react";
 import './itemDetailContainer.css';
 import { ItemDetail} from "../itemDetail/ItemDetail"
 import { bringData } from '../../helpers/bringData'
+import { useParams } from "react-router";
 
 export const ItemDetailContainer = () => {
 
     const [loading, setLoading] = useState([])
-    const [products, setProducts] = useState(false)
+    const [item, setItem] = useState(false)
+
+    const { itemId } = useParams()
 
     useEffect(() => {
 
         setLoading(true)
         bringData()
-            .then( (resp) => {
-                setProducts(resp)
+        .then( (resp) => {
+                if(!itemId){
+                    console.log("no hay id")
+                }
+                else{
+                    setItem( resp.find( prod => prod.id === Number(itemId) ) );
+                }
             })
             .catch( (error) => {
                 console.log(error)
@@ -22,7 +30,7 @@ export const ItemDetailContainer = () => {
                 setLoading(false)
             })
 
-    }, [products])
+    }, [itemId])
 
 
 
@@ -33,7 +41,7 @@ export const ItemDetailContainer = () => {
             {
                 loading 
                     ? <h2>Loading...</h2> 
-                    : <ItemDetail  product={products[0]}/>
+                    : <ItemDetail  product={item}/>
             }
             </section>
         </Fragment>
