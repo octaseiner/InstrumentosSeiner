@@ -14,6 +14,9 @@ export const Item = ({product}) => {
                     <p className="itemPrice">Price: {product.price}</p>
                 </div>
 
+                <div>
+                    <button> See More</button>
+                </div>
                 <section className="itemCountSection">
                     <ItemCount />
                 </section>

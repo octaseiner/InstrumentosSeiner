@@ -1,17 +1,25 @@
-import { Fragment } from 'react';
 import './App.css';
 import { Header } from  "./components/header/Header";
 import { ItemListContainer }  from  "./components/listContainer/ItemListContainer";
 import { ItemDetailContainer }  from  "./components/itemDetailContainer/ItemDetailContainer";
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+
 
 
 function App() {
   return (
-    <Fragment>
+    <BrowserRouter>
+
       <Header />
-      <ItemListContainer />
-      <ItemDetailContainer />
-    </Fragment>
+
+      <Routes> 
+        <Route path="/products/:typeId" element={ <ItemListContainer />} />
+        <Route path="/" element={ <ItemDetailContainer />} />
+        <Route path="*" element={ <Navigate to="/" /> } />
+      </Routes>
+        
+        
+    </BrowserRouter>
   );
 }
 

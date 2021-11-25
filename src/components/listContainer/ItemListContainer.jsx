@@ -2,6 +2,7 @@ import "./itemListContainer.css";
 import { Fragment, useEffect, useState } from "react";
 import { ItemList } from "../itemList/ItemList"
 import { bringData } from '../../helpers/bringData'
+import { useParams } from "react-router";
 
 
 export const ItemListContainer = () => {
@@ -9,12 +10,19 @@ export const ItemListContainer = () => {
     const [loading, setLoading] = useState(false)
     const [products, setProducts] = useState([])
 
+    const { typeId } = useParams()
+
     useEffect(() => {
 
         setLoading(true)
         bringData()
             .then( (resp) => {
-                setProducts(resp)
+
+                if (!typeId) {
+                    setProducts(resp)
+                } else { 
+                    setProducts(resp.filter((prod => prod.type === typeId)))
+                }
             })
             .catch( (error) => {
                 console.log(error)
@@ -23,7 +31,7 @@ export const ItemListContainer = () => {
                 setLoading(false)
             })
 
-    }, [])
+    }, [typeId])
 
     return (
         <Fragment>
