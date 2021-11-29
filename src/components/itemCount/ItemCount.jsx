@@ -2,9 +2,9 @@ import "./itemCount.css";
 import { Fragment, useState } from "react";
 
 
-export const ItemCount = (stock) => {
 
-    stock = 5
+export const ItemCount = ({stock, onAdd}) => {
+
 
     const [number, setNumber] = useState(0)
 
@@ -20,17 +20,18 @@ export const ItemCount = (stock) => {
         setNumber (number - 1)
     }
 
-    const checkZero = ()=>{
+    const checkZero = () => {
         return (number === 0);
     }
 
-    const checkStock = () =>{
+    const checkStock = () => {
         return (number >= stock);
     }
     
-    const checkAddCart = () =>{
+    const checkAddCart = () => {
         return ((number === 0 || number > stock));
     }
+
 
     return (
         <Fragment>
@@ -44,9 +45,8 @@ export const ItemCount = (stock) => {
                 </div>
 
                 <div className="addButton">
-                    <button className="addToCart" disabled={checkAddCart()}  >Add to cart</button>
+                    <button className="addToCart" disabled={checkAddCart()} onClick={() => onAdd(number)}> Add to cart</button>
                 </div>
-
             </section>
         </Fragment>
     )

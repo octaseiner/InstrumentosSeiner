@@ -1,8 +1,9 @@
 import "./itemDetail.css";
 import { Fragment } from "react";
 import { ItemCount } from "../itemCount/ItemCount";
+import { Link } from "react-router-dom";
 
-export const ItemDetail = ({product}) => {
+export const ItemDetail = ({product, onAdd, cart}) => {
     return (
         <Fragment>
             <section key={product.id} className="itemDetail">
@@ -15,9 +16,18 @@ export const ItemDetail = ({product}) => {
                     <p className="itemPrice">Price: {product.price}</p>
                 </div>
 
-                <section className="itemCountSection">
-                    <ItemCount />
-                </section>
+                <div className="itemCountSection">
+                    {cart ? (
+                        <>
+                            <Link to="/cart"> Buy </Link>
+                        </> 
+                    ) : (
+                        <>
+                            <ItemCount stock={product.stock} onAdd={onAdd}/>
+                        </> 
+                    )}
+                </div>
+
             </section>
         </Fragment>
     )

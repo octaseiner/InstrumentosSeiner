@@ -21,7 +21,7 @@ export const Item = ({product}) => {
                 </div>
 
                 <section className="itemCountSection">
-                    <ItemCount />
+                    <ItemCount stock={product.stock}/>
                 </section>
 
             </section>

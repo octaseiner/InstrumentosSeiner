@@ -8,7 +8,7 @@ export const ItemDetailContainer = () => {
 
     const [loading, setLoading] = useState([])
     const [item, setItem] = useState(false)
-
+    const [cart, setCart] = useState (false)
     const { itemId } = useParams()
 
     useEffect(() => {
@@ -17,21 +17,25 @@ export const ItemDetailContainer = () => {
         bringData()
         .then( (resp) => {
                 if(!itemId){
-                    console.log("no hay id")
+                    console.log("no hay id");
                 }
                 else{
                     setItem( resp.find( prod => prod.id === Number(itemId) ) );
                 }
             })
             .catch( (error) => {
-                console.log(error)
+                console.log(error);
             })
             .finally(() => {
-                setLoading(false)
+                setLoading(false);
             })
 
     }, [itemId])
 
+    const onAdd = (number) => {
+        console.log({...item, quantity: number})
+        setCart(true)
+    }
 
 
     return (
@@ -41,7 +45,7 @@ export const ItemDetailContainer = () => {
             {
                 loading 
                     ? <h2>Loading...</h2> 
-                    : <ItemDetail  product={item}/>
+                    : <ItemDetail  product={item} onAdd={onAdd} cart={cart}/>
             }
             </section>
         </Fragment>
