@@ -52,13 +52,6 @@ export const ItemDetail = ({name, id, price, description, image, type, stock}) =
                     <p className="itemPrice">Price: ${price}</p>
                 </div>
 
-                {/* {
-                    !agregado
-                    ? <ItemCount stock={product.stock} onAdd={}/>
-                    : <Link to="/cart"> Buy </Link>
-                } */}
-
-
                 <div className="itemCountSection">
                     {/* cart */}
                     {!isInCart(id) 

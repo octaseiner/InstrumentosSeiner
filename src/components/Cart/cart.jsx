@@ -1,5 +1,5 @@
 import { Fragment, useContext } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { CartContext } from "../../context/Context";
 import { CartItem } from "./CartItem";
 
@@ -10,13 +10,13 @@ export const Cart = () => {
 
     return (
         <Fragment>
-            {/* {
-                cart.lenght > 0
-                ? <> */}
+            {
+                cart.length > 0
+                ? <>
                     <h2> Cart </h2>
                     <section>
                         {
-                            cart.map((prod) => <CartItem {...prod}/>)
+                            cart.map((prod) => <CartItem key={prod.id} {...prod}/>)
                         }
                     </section>
 
@@ -28,12 +28,12 @@ export const Cart = () => {
                         <button onClick={clearCart}>Empty</button>
                         <button>Finish buying</button>
                     </div>
-                {/* </>
-                // : <>
+                </>
+                : <>
                     <h2> Your cart is empty </h2>
                     <Link to="/">Return to Home</Link>
                 </>
-            } */}
+            }
         </Fragment>
     )
 }

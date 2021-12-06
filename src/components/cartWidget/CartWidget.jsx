@@ -1,22 +1,20 @@
 import "./cartWidget.css";
-import { Fragment, useContext } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/Context";
 
 export const CartWidget = () => {
 
-    const {totalAmount} = useContext(CartContext)
+    const {totalAmount, cart} = useContext(CartContext)
 
     return (
-        <Fragment>
-            <section className="sectionCartWidget">
-                <Link className="cartLink" to="/cart">
-                    <button className="cartButton">
-                        <i className="fas fa-shopping-cart"></i>
-                        <span className="cartCounter">{totalAmount()}</span>
-                    </button>
-                </Link>
-            </section>
-        </Fragment>
+        <section className={cart.length === 0 ? 'hidden widget' : 'sectionCartWidget widget'}>
+            <Link className="cartLink" to="/cart">
+                <button className="cartButton">
+                    <i className="fas fa-shopping-cart"></i>
+                    <span className="cartCounter">{totalAmount()}</span>
+                </button>
+            </Link>
+        </section>
     )
 }

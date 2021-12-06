@@ -1,9 +1,9 @@
-import { Fragment, useContext, useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import './itemDetailContainer.css';
 import { ItemDetail} from "../itemDetail/ItemDetail"
 import { bringData } from '../../helpers/bringData'
 import { useParams } from "react-router";
-import { CartContext } from "../../context/Context";
+
 
 export const ItemDetailContainer = () => {
 
@@ -33,15 +33,6 @@ export const ItemDetailContainer = () => {
 
     }, [itemId])
 
-    // const onAdd = (number) => {
-    //     console.log({...item, quantity: number})
-    //     if (quantity > 0) {
-    //         addCart(products)
-    //     }
-    //         // setCart(true)
-    // }
-
-
     return (
         
         <Fragment>
@@ -50,7 +41,6 @@ export const ItemDetailContainer = () => {
                 loading 
                     ? <h2>Loading...</h2> 
                     : <ItemDetail  {...item}/>
-                    // : <ItemDetail  product={item} onAdd={onAdd} cart={cart}/>
             }
             </section>
         </Fragment>
