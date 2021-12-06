@@ -7,7 +7,7 @@ export const ItemList = ({products}) => {
     return (
         <Fragment>
             <section className="itemsSection">
-                {products.map((prod) => <Item product={prod} />)}
+                {products.map((prod) => <Item {...prod} />)}
             </section>
         </Fragment>
     );

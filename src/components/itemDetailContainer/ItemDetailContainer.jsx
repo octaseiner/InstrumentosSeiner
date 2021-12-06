@@ -1,19 +1,20 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useContext, useEffect, useState } from "react";
 import './itemDetailContainer.css';
 import { ItemDetail} from "../itemDetail/ItemDetail"
 import { bringData } from '../../helpers/bringData'
 import { useParams } from "react-router";
+import { CartContext } from "../../context/Context";
 
 export const ItemDetailContainer = () => {
 
     const [loading, setLoading] = useState([])
     const [item, setItem] = useState(false)
-    const [cart, setCart] = useState (false)
     const { itemId } = useParams()
 
     useEffect(() => {
 
         setLoading(true)
+
         bringData()
         .then( (resp) => {
                 if(!itemId){
@@ -32,10 +33,13 @@ export const ItemDetailContainer = () => {
 
     }, [itemId])
 
-    const onAdd = (number) => {
-        console.log({...item, quantity: number})
-        setCart(true)
-    }
+    // const onAdd = (number) => {
+    //     console.log({...item, quantity: number})
+    //     if (quantity > 0) {
+    //         addCart(products)
+    //     }
+    //         // setCart(true)
+    // }
 
 
     return (
@@ -45,7 +49,8 @@ export const ItemDetailContainer = () => {
             {
                 loading 
                     ? <h2>Loading...</h2> 
-                    : <ItemDetail  product={item} onAdd={onAdd} cart={cart}/>
+                    : <ItemDetail  {...item}/>
+                    // : <ItemDetail  product={item} onAdd={onAdd} cart={cart}/>
             }
             </section>
         </Fragment>

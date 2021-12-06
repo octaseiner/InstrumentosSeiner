@@ -1,35 +1,37 @@
 import "./itemCount.css";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 
 
 
-export const ItemCount = ({stock, onAdd}) => {
-
-
-    const [number, setNumber] = useState(0)
+export const ItemCount = ({counter, setCounter, handleAdd, max}) => {
 
     const plus = () => {
-        setNumber (number + 1)
+        if(counter===max){
+            return
+        } else if (counter < max){
+            setCounter( counter + 1 );
+        }
     }
 
     const minus = () => {
-        if(number === 0){
-            return;  
+        if(counter===0){
+            return
+        }else if (counter > 0){
+            setCounter( counter - 1 );
         }
-
-        setNumber (number - 1)
+        
     }
 
     const checkZero = () => {
-        return (number === 0);
+        return (counter === 0);
     }
 
     const checkStock = () => {
-        return (number >= stock);
+        return (counter >= max);
     }
     
     const checkAddCart = () => {
-        return ((number === 0 || number > stock));
+        return ((counter === 0 || counter > max));
     }
 
 
@@ -38,14 +40,14 @@ export const ItemCount = ({stock, onAdd}) => {
             <section className="itemCount">
                 <div className="numberCount">
                     <button className="minus" disabled={checkZero()}  onClick={minus}> - </button>
-                    <p className="counter">
-                        {`${number}`}
+                    <p className="counter" onChange={checkZero, checkStock, checkAddCart}>
+                        {`${counter}`}
                     </p>
                     <button className="plus" disabled={checkStock()} onClick={plus}> + </button>
                 </div>
 
                 <div className="addButton">
-                    <button className="addToCart" disabled={checkAddCart()} onClick={() => onAdd(number)}> Add to cart</button>
+                    <button className="addToCart" disabled={checkAddCart()} onClick={handleAdd}> Add to cart</button>
                 </div>
             </section>
         </Fragment>

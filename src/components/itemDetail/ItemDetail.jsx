@@ -1,32 +1,79 @@
 import "./itemDetail.css";
-import { Fragment } from "react";
+import { Fragment, useContext, useState } from "react";
 import { ItemCount } from "../itemCount/ItemCount";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../context/Context";
 
-export const ItemDetail = ({product, onAdd, cart}) => {
+
+
+export const ItemDetail = ({name, id, price, description, image, type, stock}) => {
+
+    const {isInCart, addItem} = useContext(CartContext)
+    const [counter, setCounter] = useState(1)
+    const [added, setAdded] = useState(false)
+
+    // const navigate = useNavigate()
+
+    // const handleVolver = () => {
+    //     navigate(-1)
+    // }
+
+    // const handleVolverInicio = () => {
+    //     navigate("/")
+    // }
+
+    const handleAdd = () => {
+        if (counter > 0)
+        addItem({
+            id,
+            name,
+            price,
+            image,
+            counter
+        })
+
+        setAdded(true)
+    }
+
+
+
+
+
+
     return (
         <Fragment>
-            <section key={product.id} className="itemDetail">
-                <h1 className="itemName">{product.name}</h1>
-                <img src={product.image} alt="{product.type}" />
+            <section key={id} className="itemDetail">
+                <h1 className="itemName">{name}</h1>
+                <img src={image} alt="{type}" />
                 
                 <div className="typePriceDiv">
-                    <p className="itemType">Type: {product.type}</p>
-                    <p className="itemPrice">Description: {product.description}</p>
-                    <p className="itemPrice">Price: {product.price}</p>
+                    <p className="itemType">Type: {type}</p>
+                    <p className="itemPrice">Description: {description}</p>
+                    <p className="itemPrice">Price: ${price}</p>
                 </div>
 
+                {/* {
+                    !agregado
+                    ? <ItemCount stock={product.stock} onAdd={}/>
+                    : <Link to="/cart"> Buy </Link>
+                } */}
+
+
                 <div className="itemCountSection">
-                    {cart ? (
-                        <>
-                            <Link to="/cart"> Buy </Link>
-                        </> 
-                    ) : (
-                        <>
-                            <ItemCount stock={product.stock} onAdd={onAdd}/>
-                        </> 
-                    )}
+                    {/* cart */}
+                    {!isInCart(id) 
+                        ?   <ItemCount 
+                                max={stock} 
+                                counter={counter} 
+                                setCounter={setCounter} 
+                                handleAdd={handleAdd} 
+                            />
+                        : <Link to="/cart"> Buy </Link>
+                    }
                 </div>
+
+                {/* <button onClick={handleVolver}> Return </button>
+                <button onClick={handleVolverInicio}> Return to Home </button> */}
 
             </section>
         </Fragment>
