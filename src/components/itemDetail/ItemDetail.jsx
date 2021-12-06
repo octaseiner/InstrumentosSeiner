@@ -12,15 +12,6 @@ export const ItemDetail = ({name, id, price, description, image, type, stock}) =
     const [counter, setCounter] = useState(1)
     const [added, setAdded] = useState(false)
 
-    // const navigate = useNavigate()
-
-    // const handleVolver = () => {
-    //     navigate(-1)
-    // }
-
-    // const handleVolverInicio = () => {
-    //     navigate("/")
-    // }
 
     const handleAdd = () => {
         if (counter > 0)
@@ -53,7 +44,6 @@ export const ItemDetail = ({name, id, price, description, image, type, stock}) =
                 </div>
 
                 <div className="itemCountSection">
-                    {/* cart */}
                     {!isInCart(id) 
                         ?   <ItemCount 
                                 max={stock} 
@@ -64,9 +54,6 @@ export const ItemDetail = ({name, id, price, description, image, type, stock}) =
                         : <Link to="/cart"> Buy </Link>
                     }
                 </div>
-
-                {/* <button onClick={handleVolver}> Return </button>
-                <button onClick={handleVolverInicio}> Return to Home </button> */}
 
             </section>
         </Fragment>
