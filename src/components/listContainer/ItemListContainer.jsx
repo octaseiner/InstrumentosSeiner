@@ -23,8 +23,8 @@ export const ItemListContainer = () => {
                             : productsRef
 
         getDocs(q)
-            .then((snapShot) => {
-                const items = snapShot.docs.map((doc) => ({
+            .then((collection) => {
+                const items = collection.docs.map((doc) => ({
                     id: doc.id,
                     ...doc.data()
                 }))
