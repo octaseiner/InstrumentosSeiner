@@ -1,8 +1,9 @@
 import "./itemListContainer.css";
 import { Fragment, useEffect, useState } from "react";
 import { ItemList } from "../itemList/ItemList"
-import { bringData } from '../../helpers/bringData'
 import { useParams } from "react-router";
+import { collection, getDocs, query, where } from "firebase/firestore"
+import { db } from "../../firebase/config"
 
 
 export const ItemListContainer = () => {
@@ -15,22 +16,23 @@ export const ItemListContainer = () => {
     useEffect(() => {
 
         setLoading(true)
-        bringData()
-            .then( (resp) => {
 
-                if (!typeId) {
-                    setProducts(resp)
-                } else { 
-                    setProducts(resp.filter((prod => prod.type === typeId)))
-                }
-            })
-            .catch( (error) => {
-                console.log(error)
+        const productsRef = collection(db, "products")
+
+        const q = typeId    ? query(productsRef, where("type", "==", typeId))
+                            : productsRef
+
+        getDocs(q)
+            .then((snapShot) => {
+                const items = snapShot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data()
+                }))
+                setProducts(items)
             })
             .finally(() => {
-                setLoading(false)
+                setLoading(false);
             })
-
     }, [typeId])
 
     return (

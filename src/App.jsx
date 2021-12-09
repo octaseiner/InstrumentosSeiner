@@ -9,8 +9,6 @@ import { CartProvider } from './context/Context';
 
 
 
-
-
 function App() {
 
   return (
