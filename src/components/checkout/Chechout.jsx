@@ -2,7 +2,7 @@ import { Fragment, useContext, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { CartContext } from "../../context/Context";
 import { validarDatos } from "../../helpers/validaciones";
-import { collection, Timestamp, writeBatch, addDoc, query, where, documentId, getDocs } from "firebase/firestore/lite"
+import { collection, Timestamp, writeBatch, addDoc, query, where, documentId, getDocs } from "firebase/firestore"
 import { db } from "../../firebase/config"
 import Swal from "sweetalert2";
 
@@ -62,11 +62,11 @@ export const Checkout = () => {
             const itemToUpdate = cart.find((prod) => prod.id === doc.id)
 
             /* SI STOCK >= CANTIDAD DE ITEM EN EL CARRITO*/
-            if (doc.data().stock >= itemToUpdate.stock) {
+            if (doc.data().stock >= itemToUpdate.counter) {
 
                 /* ORDEN DE ACTUALIZACION */
                 batch.update(doc.ref, {
-                    stock: doc.data().stock - itemToUpdate.stock
+                    stock: doc.data().stock - itemToUpdate.counter
                 })
             } else {
                 /* PUSHEO UNA COPIA DE QUE ES LO QUE ESTA SIN STOCK */
