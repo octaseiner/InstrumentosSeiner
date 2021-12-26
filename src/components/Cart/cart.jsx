@@ -26,7 +26,7 @@ export const Cart = () => {
 
                     <div>
                         <button onClick={clearCart}>Empty</button>
-                        <button>Finish buying</button>
+                        <Link to="/checkout">Finish buying</Link>
                     </div>
                 </>
                 : <>

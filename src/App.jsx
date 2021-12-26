@@ -3,9 +3,11 @@ import { Header } from  "./components/header/Header";
 import { ItemListContainer }  from  "./components/listContainer/ItemListContainer";
 import { ItemDetailContainer }  from  "./components/itemDetailContainer/ItemDetailContainer";
 import { Cart }  from  "./components/Cart/cart";
+import { Checkout }  from  "./components/checkout/Chechout"
 import { Home } from "./Pages/Home/Home"
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { CartProvider } from './context/Context';
+
 
 
 
@@ -23,6 +25,7 @@ function App() {
           <Route path="/products/:typeId" element={ <ItemListContainer />} />
           <Route path="/detail/:itemId" element={ <ItemDetailContainer />} />
           <Route path="/cart" element={ <Cart />} />
+          <Route path="/checkout" element={ <Checkout />} />
           <Route path="*" element={ <Navigate to="/" /> } />
         </Routes>
           
