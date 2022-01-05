@@ -5,6 +5,7 @@ import { validarDatos } from "../../helpers/validaciones";
 import { collection, Timestamp, writeBatch, addDoc, query, where, documentId, getDocs } from "firebase/firestore"
 import { db } from "../../firebase/config"
 import Swal from "sweetalert2";
+import "./checkout.css";
 
 export const Checkout = () => {
 
@@ -109,48 +110,52 @@ export const Checkout = () => {
                 ? <Navigate to="/"/>
                 :
 
-                <div>
-                    <h2>Resumen de compra</h2>
+                <div className="checkout">
+                    <h2>Checkout</h2>
                     
                     
-                    <form onSubmit={handleSubmit}>
+                    <form className="checkoutForm" onSubmit={handleSubmit}>
                         <input 
+                            className="checkoutInput"
                             onChange={handleInputChange}
                             name="name"
                             value={values.name}
                             type="text"
                             placeholder="name"
                         />
-                        {values.name.length < 4 && <small>Invalid name</small>}
+                        {values.name.length < 4 && <small className="error">Invalid name</small>}
                     
                         <input 
+                            className="checkoutInput"
                             onChange={handleInputChange}
                             name="surname"
                             value={values.surname}
                             type="text"
                             placeholder="surname"
                         />
-                        {values.surname.length < 4 && <small>Invalid surname</small>}
+                        {values.surname.length < 4 && <small className="error">Invalid surname</small>}
                     
                         <input 
+                            className="checkoutInput"
                             onChange={handleInputChange}
                             name="email"
                             value={values.email}
                             type="email"
                             placeholder="email"
                         />
-                        {values.email.length < 4 && <small>Invalid email</small>}
+                        {values.email.length < 4 && <small className="error">Invalid email</small>}
                     
                         <input 
+                            className="checkoutInput"
                             onChange={handleInputChange}
                             name="emailConfirm"
                             value={values.emailConfirm}
                             type="emailConfirm"
-                            placeholder="emailConfirm"
+                            placeholder="email confirm"
                         />
-                        {values.emailConfirm !== values.email && <small>Invalid email</small>}
+                        {values.emailConfirm !== values.email && <small className="error">Invalid email</small>}
                     
-                        <button type="submit">Send</button>
+                        <button className="button" type="submit">Send</button>
                     </form>
                 </div>
             }

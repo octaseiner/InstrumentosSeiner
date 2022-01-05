@@ -39,15 +39,15 @@ export const ItemCount = ({counter, setCounter, handleAdd, max}) => {
         <Fragment>
             <section className="itemCount">
                 <div className="numberCount">
-                    <button className="minus" disabled={checkZero()}  onClick={minus}> - </button>
+                    <button className="minus button" disabled={checkZero()}  onClick={minus}> - </button>
                     <p className="counter" onChange={checkZero, checkStock, checkAddCart}>
                         {`${counter}`}
                     </p>
-                    <button className="plus" disabled={checkStock()} onClick={plus}> + </button>
+                    <button className="plus button" disabled={checkStock()} onClick={plus}> + </button>
                 </div>
 
                 <div className="addButton">
-                    <button className="addToCart" disabled={checkAddCart()} onClick={handleAdd}> Add to cart</button>
+                    <button className="addToCart button" disabled={checkAddCart()} onClick={handleAdd}> Add to cart</button>
                 </div>
             </section>
         </Fragment>

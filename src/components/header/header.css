@@ -2,11 +2,14 @@
 
 header {
     width: 100%;
-    height: 80px;
+    height: 60px;
     background-color: rgb(20, 20, 20);
     display: flex;
     justify-content: center;
     border-radius: 0px 0px 20px 20px;
+    position: fixed;
+    top: 0%;
+    border-bottom: 2px solid goldenrod;
 }
 
 nav {
@@ -25,24 +28,24 @@ nav {
 }
 
 .navItem {
-    padding: 10px;
-    color: white;
+    color: goldenrod;
 }
 
 .navItem:hover {
     cursor: pointer;
     color: black;
-    border-bottom: solid thistle;
+    border-bottom: 2px solid goldenrod;
 }
 
 .navLink {
     text-decoration: none;
-    color: white;
+    color: goldenrod;
 }
 
+
 .logo {
-    color: white;
-    padding-left: 15px;
+    color: goldenrod;
+    margin-left: 20px;
     font-size: 20px;
 }
 

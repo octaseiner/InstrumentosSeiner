@@ -6,21 +6,12 @@ import { CartContext } from "../../context/Context";
 
 
 
-export const ItemDetail = ({name, id, price, description, image, type, stock}) => {
+export const ItemDetail = ({name, brand, id, price, description, image, type, stock}) => {
 
     const {isInCart, addItem} = useContext(CartContext)
     const [counter, setCounter] = useState(1)
     const [added, setAdded] = useState(false)
 
-    // const navigate = useNavigate()
-
-    // const handleVolver = () => {
-    //     navigate(-1)
-    // }
-
-    // const handleVolverInicio = () => {
-    //     navigate("/")
-    // }
 
     const handleAdd = () => {
         if (counter > 0)
@@ -29,6 +20,8 @@ export const ItemDetail = ({name, id, price, description, image, type, stock}) =
             name,
             price,
             image,
+            brand,
+            type,
             counter
         })
 
@@ -43,7 +36,7 @@ export const ItemDetail = ({name, id, price, description, image, type, stock}) =
     return (
         <Fragment>
             <section key={id} className="itemDetail">
-                <h1 className="itemName">{name}</h1>
+                <h1 className="itemName">{brand} {type}</h1>
                 <img src={image} alt="{type}" />
                 
                 <div className="typePriceDiv">
@@ -60,12 +53,9 @@ export const ItemDetail = ({name, id, price, description, image, type, stock}) =
                                 setCounter={setCounter} 
                                 handleAdd={handleAdd} 
                             />
-                        : <Link to="/cart"> Buy </Link>
+                        : <button className="button"><Link className="link" to="/cart"> Buy </Link></button>
                     }
                 </div>
-
-                {/* <button onClick={handleVolver}> Return </button>
-                <button onClick={handleVolverInicio}> Return to Home </button> */}
 
             </section>
         </Fragment>

@@ -1,11 +1,11 @@
 .itemCount {
     width: 200px;
-    height: 70px;
     border: 1px solid;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    color: goldenrod;
 }
 
 .numberCount {
@@ -15,48 +15,27 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    margin-top: 2px;
+    padding: 10px 0px 0px 0px;
 }
 
 .minus {
-    width: 20px;
-    height: 20px;
-    border: 1px solid;
-    border-radius: 20px;
+    width: 25px;
     cursor: pointer;
 }
 
 .plus {
-    width: 20px;
-    height: 20px;
-    border: 1px solid;
-    border-radius: 20px;
+    width: 25px;
     cursor: pointer;
-}
-
-.counter{
-    width: 50px;
-    height: 20px;
-    border: 1px solid;
-}
-
-.buttonCount {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .addButton {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 10px;
 }
 
 .addToCart {
-    width: 100px;
-    height: 20px;
-    border: 1px solid;
-    border-radius: 20px;
     cursor: pointer;
 }
 

@@ -1,16 +1,60 @@
 .item {
-    width: 250px;
-    height: 500px;
-    border: 2px solid red;
+    width: 500px;
+    height: 300px;
     border-radius: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    margin: 15px;
+    background-color: rgba(255, 255, 255, 0.5);
+
 }
 
 .itemCountSection {
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+
+img {
+    border: 2px solid goldenrod;
+    border-radius: 5%;
+}
+
+
+.button {
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: goldenrod;
+    color: black;
+    padding: 5px;
+    font-family: 'Acme', sans-serif;
+    width: auto;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: gold;
+}
+
+button:disabled,
+button[disabled]{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: unset;
+}
+
+button:disabled:hover,
+button[disabled]{
+    background-color: #cccccc;
+}
+
+.typePriceDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }

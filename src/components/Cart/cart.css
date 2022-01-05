@@ -1,0 +1,32 @@
+.cart {
+    background-color: rgba(20, 20, 20, 0.8);
+    margin: 150px;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+
+.cartItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0px 20px 0px;
+    border-bottom: 2px solid goldenrod;
+    border-bottom-width: 80%;
+}
+
+.totalPrice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.finishBuyingButton {
+    margin-left: 35px;
+}
+
+.cartTittle {
+    color: goldenrod;
+}

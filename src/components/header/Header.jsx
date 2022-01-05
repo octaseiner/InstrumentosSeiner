@@ -9,15 +9,14 @@ export const Header = () => {
             <header>
                 <nav>
                     <div>
-                        <h1><Link to="/" className="font logo navLink">The Music Store</Link></h1>
+                        <h1><Link to="/" className="font logo navLink">The Cymbal Store</Link></h1>
                     </div>
 
                     <ul className="navList">
                         <li className="navItem"><Link to="/" className="font navLink">Home</Link></li>
-                        <li className="navItem"><Link to="products/drums" className="font navLink">Drums</Link></li>
-                        <li className="navItem"><Link to="products/bass" className="font navLink">Bass</Link></li>
-                        <li className="navItem"><Link to="products/synth" className="font navLink">Synth</Link></li>
-                        <li className="navItem"><Link to="products/mic" className="font navLink">Mic</Link></li>
+                        <li className="navItem"><Link to="products/zildjian" className="font navLink">Zildjian</Link></li>
+                        <li className="navItem"><Link to="products/sabian" className="font navLink">Sabian</Link></li>
+                        <li className="navItem"><Link to="products/stagg" className="font navLink">Stagg</Link></li>
                     </ul>
 
                     <CartWidget />

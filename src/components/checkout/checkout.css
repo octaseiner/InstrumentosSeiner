@@ -1,0 +1,26 @@
+.checkout {
+    background-color: rgba(20, 20, 20, 0.8);
+    margin: 150px;
+    padding: 10px 30px 10px 30px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    color: goldenrod;
+}
+
+.checkoutForm {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.error {
+    color: rgba(255, 0, 0, 0.89);
+}
+
+.checkoutInput {
+    margin-top: 30px;
+    width: 60%;
+}

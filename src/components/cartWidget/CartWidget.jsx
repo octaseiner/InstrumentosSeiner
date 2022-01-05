@@ -8,7 +8,7 @@ export const CartWidget = () => {
     const {totalAmount, cart} = useContext(CartContext)
 
     return (
-        <section className={cart.length === 0 ? 'hidden widget' : 'sectionCartWidget widget'}>
+        <section className="sectionCartWidget widget">
             <Link className="cartLink" to="/cart">
                 <button className="cartButton">
                     <i className="fas fa-shopping-cart"></i>

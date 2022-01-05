@@ -1,0 +1,14 @@
+footer {
+    width: 99.88%;
+    height: 70px;
+    font-family: 'Acme', sans-serif;
+    background-color: rgb(20, 20, 20);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 2px solid goldenrod;
+    border-radius: 20px 20px 0px 0px;
+    color: white;
+    position: fixed;
+    bottom: 0;
+}

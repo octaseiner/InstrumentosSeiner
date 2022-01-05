@@ -11,7 +11,7 @@ export const ItemListContainer = () => {
     const [loading, setLoading] = useState(false)
     const [products, setProducts] = useState([])
 
-    const { typeId } = useParams()
+    const { brandId } = useParams()
 
     useEffect(() => {
 
@@ -19,7 +19,7 @@ export const ItemListContainer = () => {
 
         const productsRef = collection(db, "products")
 
-        const q = typeId    ? query(productsRef, where("type", "==", typeId))
+        const q = brandId    ? query(productsRef, where("brand", "==", brandId))
                             : productsRef
 
         getDocs(q)
@@ -33,18 +33,20 @@ export const ItemListContainer = () => {
             .finally(() => {
                 setLoading(false);
             })
-    }, [typeId])
+    }, [brandId])
 
     return (
         <Fragment>
-            <h1 className="name font">The Music Store</h1>
-            <section className="listProducts font">
-            {
-                loading 
-                    ? <h2 className="">Loading...</h2> 
-                    : <ItemList className="" products={products}/>
-            }
-            </section>
+            <div className="mainSection">
+                <h1 className="name font">The Cymbal Store</h1>
+                <section className="listProducts font">
+                {
+                    loading 
+                        ? <h2 className="">Loading...</h2> 
+                        : <ItemList className="" products={products}/>
+                }
+                </section>
+            </div>
         </Fragment>
     )
 }
