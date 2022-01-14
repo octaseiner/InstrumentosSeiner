@@ -6,14 +6,16 @@ import { getFirestore } from "firebase/firestore"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAq2XAz2CVFZpYt97XtJpWvY4jRgkpD-6I",
-    authDomain: "themusicstoreseiner.firebaseapp.com",
-    projectId: "themusicstoreseiner",
-    storageBucket: "themusicstoreseiner.appspot.com",
-    messagingSenderId: "649423074543",
-    appId: "1:649423074543:web:fb24331876edc7f51d571a"
+    apiKey: "AIzaSyDhzYB3qb2NKtGZKfyDgVpGaDgATTAnSvg",
+    authDomain: "thecymbalstorecoder.firebaseapp.com",
+    projectId: "thecymbalstorecoder",
+    storageBucket: "thecymbalstorecoder.appspot.com",
+    messagingSenderId: "933222496088",
+    appId: "1:933222496088:web:3aff65c2352038830a972d"
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app)
+

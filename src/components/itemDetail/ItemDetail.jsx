@@ -17,7 +17,6 @@ export const ItemDetail = ({name, brand, id, price, description, image, type, st
         if (counter > 0)
         addItem({
             id,
-            name,
             price,
             image,
             brand,

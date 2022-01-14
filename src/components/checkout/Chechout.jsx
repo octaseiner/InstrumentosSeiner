@@ -44,7 +44,7 @@ export const Checkout = () => {
         /* BATCH DE ACTUALIZACION */
         const batch = writeBatch(db)
 
-        /* REFERENCIAS A OREDENES Y PRODUCTOS EN FIREBASE*/
+        /* REFERENCIAS A ORDENES Y PRODUCTOS EN FIREBASE*/
         const orderRef = collection(db, "orders")
         const productsRef = collection(db, "products")
 
@@ -75,11 +75,15 @@ export const Checkout = () => {
             }
         })
 
+
+
+
         if (outOfStock.length === 0) {
             /* SI ESTA VACIO*/
             /* AGREGO DOCUMENTO */
             addDoc(orderRef, order)
                 .then((res) => {
+                    
                     /* COMMITEO */
                     batch.commit()
 
